@@ -11,7 +11,6 @@ def hello_world():  # put application's code here
 def hello():
     return render_template('hello.html')
 
-
 @app.route('/about')
 def about():
     return render_template('about.html')
