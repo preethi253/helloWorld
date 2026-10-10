@@ -13,7 +13,7 @@ body {
 
 /*The paragraphs have these attributes which
 are 16pt font, 2.0 line height, and margin-bottom
-is 16*/
+is 16. Margin bottom is about adding a space at the bottom. */
 
 p {
     font-size: 16px;
@@ -28,7 +28,8 @@ h1 {
 
 /* level 2 headings are getting the color royal blue,
 the border-bottom is 2 px, and each of the headings
-get a light blue line underneath. I added padding
+get a light blue line underneath. I created this  in the
+ border bottom. I added padding
 as well so that there is space between the heading and
 the line.*/
 
