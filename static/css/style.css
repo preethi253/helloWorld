@@ -74,7 +74,7 @@ This talks about what I like to do in my free time,
 The color is blue and has padding, I made a royal blue bar
 on the left side.
  */
-p#hobbies {
+#hobbies {
     background-color: #F3F6FF;
     padding: 12px;
     border-left: 4px solid #4169E1;
