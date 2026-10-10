@@ -1,0 +1,102 @@
+/*I designed this website so that it has blue theme. The prominent colors used are royal blue, black, and
+white*/
+
+/* The website will use these fonts, the
+background color is white and the text is black.
+ */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    margin: 30px;
+}
+
+/*The paragraphs have these attributes which
+are 16pt font, 2.0 line height, and margin-bottom
+is 16*/
+
+p {
+    font-size: 16px;
+    line-height: 2.0;
+    margin-bottom: 16px;
+}
+
+/* h1 heading are getting the color royal blue*/
+h1 {
+    color: #4169E1;
+}
+
+/* level 2 headings are getting the color royal blue,
+the border-bottom is 2 px, and each of the headings
+get a light blue line underneath. I adding padding
+as well so that there is space between the heading and
+the line.*/
+
+h2 {
+    color: #4169E1;
+    border-bottom: 2px solid #B7C9F2;
+    padding-bottom: 5px;
+}
+
+/* level 3 heading is dark blue*/
+h3 {
+    color: #3155B7;
+}
+
+/*this is to style the table. I am using the border
+to be royal blue. There is a border of 2px. I also
+ do border collapse. */
+
+table, td, th {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #4169E1;
+    border-collapse: collapse;
+
+
+    /*adds space to the entries in the cell*/
+}
+
+th, td {
+    padding: 8px;
+}
+
+/* the heading of the table is black in font color
+and it is going to get a blue background*/
+
+th {
+    background-color: #EDF2FF;
+    color: #000000;
+}
+
+/* I added the id here this is the id attribute,
+This talks about what I like to do in my free time,
+The color is blue and has padding, I made a royal blue bar
+on the left side.
+ */
+p#hobbies {
+    background-color: #F3F6FF;
+    padding: 12px;
+    border-left: 4px solid #4169E1;
+}
+
+/* This is the class attribute. This is for the
+part in my website for University.  The font is bold
+and the text is royal blue.
+ */
+.title-section {
+    color: #4169E1;
+    font-weight: bold;
+}
+
+/* This is making the logo a certain dimensions.*/
+img.logo {
+    width: 267px;
+    height: 72px;
+}
+
+/* Links are blue*/
+a {
+    color: #3155B7;
+}
+
