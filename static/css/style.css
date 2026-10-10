@@ -44,7 +44,7 @@ h3 {
     color: #3155B7;
 }
 
-/*this is to style the table. I am using the border
+/*this is to style the table. I making the border
 to be royal blue. There is a border of 2px. I also
  do border collapse. */
 
@@ -72,7 +72,8 @@ th {
 
 /* I added the id here this is the id attribute,
 This talks about what I like to do in my free time,
-The color is blue and has padding, I made a royal blue bar
+The text is black and it is in a light blue background color
+ and has padding, I made a royal blue bar
 on the left side.
  */
 p#hobbies {
