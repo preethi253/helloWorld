@@ -14,7 +14,6 @@ body {
 /*The paragraphs have these attributes which
 are 16pt font, 2.0 line height, and margin-bottom
 is 16. Margin bottom is about adding a space at the bottom. */
-
 p {
     font-size: 16px;
     line-height: 2.0;
