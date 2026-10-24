@@ -1,0 +1,17 @@
+  <!--inherits the base class -->
+{% extends "base.html" %}
+
+{% block title %}Favorite Course{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm p-4">
+    <h1 class="mb-3">Favorite Course</h1>
+
+      <!--Displays what the user enter in the url.  -->
+    <p>
+        You entered your favorite course as:
+        {{ subject }} {{ course_number }}
+    </p>
+</div>
+{% endblock %}
+
