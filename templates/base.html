@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Website{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+ <!-- This is the nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+        <div class="container justify-content-end">
+             <!-- Text is white -->
+            <a class="nav-link text-white me-3"
+               href="/favorite-course">
+                Favorite Course
+            </a>
+
+            <a class="nav-link text-white"
+               href="/contact">
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+     <!--Included something that means I made the page, have to include our name -->
+   <p class="text-muted small fw-bold">Created by Preethi Narayanan</p>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
+
