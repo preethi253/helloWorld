@@ -41,6 +41,7 @@ def contact():
         last_name = request.form.get('last_name', '')
         email = request.form.get('email', '')
         phone_number = request.form.get('phone_number', '')
+        reason_for_contact = request.form.get('reason_for_contact', '')
 
         return render_template(
             'contact.html',
@@ -48,6 +49,7 @@ def contact():
             last_name=last_name,
             email=email,
             phone_number=phone_number,
+            reason_for_contact=reason_for_contact,
             submitted=True
         )
 
