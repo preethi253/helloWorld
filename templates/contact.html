@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="card shadow-sm p-4">
-        <h1 class="mb-3">Contact Us</h1>
+        <h1 class="mb-3">Contact Me </h1>
 
         <!--message that is displayed if users enter the form -->
         {% if submitted %}
@@ -19,10 +19,6 @@
             <p><strong>Phone Number:</strong> {{ phone_number }}</p>
                 <p><strong>Reason for Contact:</strong> {{ reason_for_contact }}</p>
 
-            <!--Takes users back to the form -->
-            <a href="{{ url_for('contact') }}" class="btn btn-primary">
-                Back to Form
-            </a>
             <!--Shows the contact form to make users fill it out if they
              have not. -->
         {% else %}
