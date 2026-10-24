@@ -1,0 +1,71 @@
+ <!-- inherits the base.html -->
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm p-4">
+    <h1 class="mb-3">Contact Us</h1>
+
+ <!--message that is displayed if users enter the form -->
+    {% if submitted %}
+        <h2>Thank you for completing the form!</h2>
+        <p>Here is the information you entered:</p>
+
+ <!--Displays the information that the user entered  -->
+        <p><strong>First Name:</strong> {{ first_name }}</p>
+        <p><strong>Last Name:</strong> {{ last_name }}</p>
+        <p><strong>Email Address:</strong> {{ email }}</p>
+        <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+
+         <!--Takes users back to the form -->
+       <a href="{{ url_for('contact') }}" class="btn btn-primary">
+            Back to Form
+        </a>
+ <!--Shows the contact form to make users fill it out if they
+  have not. -->
+    {% else %}
+        <form method="POST" action="/contact">
+            <div class="mb-3">
+                <label for="first_name" class="form-label">
+                    First Name
+                </label>
+                <!--Users have to enter first name -->
+                <input type="text" class="form-control"
+                       id="first_name" name="first_name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="last_name" class="form-label">
+                    Last Name
+                </label>
+                  <!--Users have to enter last name -->
+                <input type="text" class="form-control"
+                       id="last_name" name="last_name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    Email Address
+                </label>
+                  <!--Users have to enter email  -->
+                <input type="email" class="form-control"
+                       id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone_number" class="form-label">
+                    Phone Number
+                </label>
+                  <!--Users have to enter phone number-->
+                <input type="tel" class="form-control"
+                       id="phone_number" name="phone_number" required>
+            </div>
+  <!--the submit button is blue -->
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
