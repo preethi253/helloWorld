@@ -13,18 +13,7 @@
     <div class="row">
         <div class="col">
 
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert {{ 'alert-success' if category == 'success' else 'alert-danger' }}"
-                             role="alert">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-            <!-- Table has this information. -->
+            <!-- table of student information -->
             <table class="table table-striped">
                 <tr>
                     <th>Last Name</th>
@@ -32,46 +21,53 @@
                     <th>Email</th>
                     <th>Major</th>
                     <th>Is Honors?</th>
-                    <th>Actions</th>
+                    {% if current_user.role in ['ADMIN', 'MANAGER'] %}
+                        <th>Actions</th>
+                    {% endif %}
                 </tr>
 
-                <!-- Looks through all the students and looks at thier majors.  -->
                 {% for each_student, each_major in students %}
                     <tr>
                         <td>
-                            <a href="{{ url_for('student_view', student_id=each_student['student_id']) }}">{{ each_student['last_name'] }}</a>
+                            <a href="{{ url_for('student_view',
+                            student_id=each_student['student_id']) }}">{{ each_student['last_name'] }}</a>
                         </td>
+                        <!-- student has the following information -->
                         <td>{{ each_student['first_name'] }}</td>
                         <td>{{ each_student['email'] }}</td>
                         <td>{{ each_major['major'] }}</td>
                         <td>{{ 'Yes' if each_student['is_honors'] == 1 else 'No' }}</td>
-                        <td>
-                            <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}"
-                               class="btn btn-secondary" role="button">Edit</a>
-                            &nbsp;
-                            <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}"
-                               class="btn btn-secondary" role="button">Delete</a>
-                        </td>
+                        {% if current_user.role in ['ADMIN', 'MANAGER'] %}
+                            <td>
+                                <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}"
+                                   class="btn btn-secondary" role="button">Edit</a>
+                                {% if current_user.role in ['ADMIN'] %}
+                                    <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}"
+                                       class="btn btn-secondary" role="button">Delete</a>
+                                {% endif %}
+                            </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             </table>
         </div>
     </div>
 
-    <!-- The website shows the total students. -->
-    <div class="row">
-        <div class="col">
-            Total Number of Students: {{ students|length }}
+    {% if current_user.role in ['ADMIN', 'MANAGER'] %}
+        <div class="row">
+            <div class="col">
+                Total Number of Students: {{ students|length }}
+            </div>
         </div>
-    </div>
 
-    <!-- This adds students. It is a button.  -->
-    <div class="row">
-        <div class="col text-center">
-            <a href="{{ url_for('student_create') }}" class="btn btn-primary" role="button">Add New Student</a>
+        <div class="row">
+            <div class="col text-center">
+                <a href="{{ url_for('student_create') }}" class="btn btn-primary" role="button">Add New Student</a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 
 {% endblock %}
+
 
 
