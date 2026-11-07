@@ -31,12 +31,6 @@
                         <li class="nav-item">
                           <a id="student_create" class="nav-link {% if request.endpoint=='student_create' %}active{%endif %}" href="{{ url_for('student_create') }}">Add New Student</a>
                         </li>
-
-                            <li class="nav-item">
-                                <a id="student_view_all"
-                                   class="nav-link {% if request.endpoint=='student_view_all' %}active{% endif %}"
-                                   href="{{ url_for('student_view_all') }}">View All Students</a>
-                            </li>
  <!-- This is for the training.html and the nav bar will open  -->
                             <li class="nav-item">
                                 <a id="training"
